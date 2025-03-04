@@ -1,7 +1,7 @@
 package bloom
 
 import (
-	"github.com/vulcan-frame/vulcan-pkg-tools/bitmap"
+	"github.com/vulcan-frame/vulcan-pkg-tool/bitmap"
 )
 
 // Int64BloomFilter optimized Bloom filter for int64

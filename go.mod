@@ -1,4 +1,4 @@
-module github.com/vulcan-frame/vulcan-pkg-tools
+module github.com/vulcan-frame/vulcan-pkg-tool
 
 go 1.23
 
