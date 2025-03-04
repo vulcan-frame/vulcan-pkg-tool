@@ -1,9 +1,12 @@
 package threading
 
 import (
+	"errors"
 	"sync"
 	"time"
 )
+
+var ErrCountdownTimerExpired = errors.New("countdown timer expired")
 
 // CountdownStopper the interface for countdown stoppers
 type CountdownStopper interface {
