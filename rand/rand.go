@@ -1,4 +1,4 @@
-package xrand
+package rand
 
 import (
 	"bytes"

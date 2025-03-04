@@ -1,4 +1,4 @@
-package xip
+package ip
 
 import (
 	"context"

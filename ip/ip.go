@@ -1,7 +1,7 @@
-// Package xip provides utilities for IP address operations, including
+// Package ip provides utilities for IP address operations, including
 // detection of internal IPs, extracting addresses from connections,
 // and client IP identification in request contexts.
-package xip
+package ip
 
 import (
 	"context"

@@ -1,4 +1,4 @@
-package threading
+package sync
 
 import (
 	"context"
