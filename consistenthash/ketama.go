@@ -1,12 +1,13 @@
 package consistenthash
 
 import (
-	"crypto/sha1"
 	"encoding/binary"
 	"hash"
 	"sort"
 	"strconv"
 	"sync"
+
+	"github.com/spaolacci/murmur3"
 )
 
 const (
@@ -41,7 +42,7 @@ func NewRing(virtualSpots int) *HashRing {
 		virtualSpots: virtualSpots,
 		hashCache: sync.Pool{
 			New: func() interface{} {
-				return sha1.New()
+				return murmur3.New64()
 			},
 		},
 	}

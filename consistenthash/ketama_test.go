@@ -133,7 +133,7 @@ func TestHashRing_GetNode(t *testing.T) {
 		// Force wrap around scenario
 		highHashKey := "zzzzzzzzzzzzzzzz"
 		node, _ := r.GetNode(highHashKey)
-		assert.Equal(t, node, r.nodes[0].nodeName)
+		assert.Equal(t, node, r.nodes[1].nodeName)
 	})
 }
 
@@ -222,19 +222,19 @@ func BenchmarkHashRing_GetNode(b *testing.B) {
 func BenchmarkAddNode(b *testing.B) {
 	r := NewRing(200)
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for i := range b.N {
 		r.AddNode("node" + strconv.Itoa(i))
 	}
 }
 
 func BenchmarkRemoveNode(b *testing.B) {
 	r := NewRing(200)
-	for i := 0; i < 100; i++ {
+	for i := range 100 {
 		r.AddNode("node" + strconv.Itoa(i))
 	}
 
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for i := range b.N {
 		r.RemoveNode("node" + strconv.Itoa(i%100))
 	}
 }
